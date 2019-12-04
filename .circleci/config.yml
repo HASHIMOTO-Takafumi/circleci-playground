@@ -1,0 +1,12 @@
+version: 2.1
+
+jobs:
+  hello:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: greeting
+          command: |
+            cd $CIRCLE_WORKING_DIRECTORY/src
+            python main.py
