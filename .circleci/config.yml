@@ -10,3 +10,9 @@ jobs:
           command: |
             cd $CIRCLE_WORKING_DIRECTORY/src
             python main.py
+
+workflows:
+  version: 2
+  hello-work:
+    jobs:
+      - hello
