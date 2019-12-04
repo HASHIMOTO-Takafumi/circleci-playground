@@ -2,8 +2,7 @@ version: 2.1
 
 jobs:
   hello:
-    docker:
-      - image: circleci/python:3.7
+    machine: true
     working_directory: ~/repo
     steps:
       - checkout
