@@ -25,7 +25,11 @@ jobs:
           name: build docker image
           command: |
             cd $CIRCLE_WORKING_DIRECTORY
-            docker build .
+            docker build . -t chowntest
+      - run:
+          name: check
+          command: |
+            docker run chowntest ls / -al
 
 workflows:
   version: 2
