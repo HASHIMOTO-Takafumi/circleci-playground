@@ -12,7 +12,8 @@ jobs:
             cd $CIRCLE_WORKING_DIRECTORY/src
             python main.py
   build:
-    machine: true
+    machine:
+      image: ubuntu-1604:202007-01
     working_directory: /home/circleci/repo
     steps:
       - checkout
