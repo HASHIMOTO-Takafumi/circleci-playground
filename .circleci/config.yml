@@ -11,9 +11,23 @@ jobs:
           command: |
             cd $CIRCLE_WORKING_DIRECTORY/src
             python main.py
+  build:
+    machine: true
+    working_directory: /home/circleci/repo
+    steps:
+      - checkout
+      - run:
+          name: show version
+          command: |
+            docker version
+      - run:
+          name: build docker image
+          command: |
+            cd $CIRCLE_WORKING_DIRECTORY
+            docker build .
 
 workflows:
   version: 2
-  hello-work:
+  build:
     jobs:
-      - hello
+      - build
